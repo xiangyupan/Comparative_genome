@@ -13,12 +13,13 @@ Multiple genomes alignment
 * MultiZ <br>
 ```multiz human.chimp.galago.maf human.mouse.rat.maf 1```<br>
   ### program description
-  multiz.v11.2:  -- aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats
-    args: [R=?] [M=?] file1 file2 v? [out1 out2] [nohead] [all]
-	  R(30) radius in dynamic programming.
-	  M(1) minimum output width.
-	  out1 out2(null) null: stdout; out1 out2: file names for collecting unused input.
-	  nohead(null) null: output maf header; nohead: not to output maf header.
-	  all(null) null: not to output single-row blocks; all: output all blocks.
-maf-file1 and maf-file2 are two maf files to be aligned, each topped by a same reference sequence. The alignment of reference sequence with other components might be just for purpose of determing approximate alignment between two files, thus the alignment might be fixed or not, this is specified by v value, which can be only 0 or 1.<br>
+  multiz.v11.2:  -- aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats<br>
+    args: [R=?] [M=?] file1 file2 v? [out1 out2] [nohead] [all]<br>
+	  R(30) radius in dynamic programming.<br>
+	  M(1) minimum output width.<br>
+	  out1 out2(null) null: stdout; out1 out2: file names for collecting unused input.<br>
+	  nohead(null) null: output maf header; nohead: not to output maf header.<br>
+	  all(null) null: not to output single-row blocks; all: output all blocks.<br>
+maf-file1 and maf-file2 are two maf files to be aligned, each topped by a same reference sequence.<br>
+The alignment of reference sequence with other components might be just for purpose of determing approximate alignment between two files, thus the alignment might be fixed or not, this is specified by v value, which can be only 0 or 1.<br>
 
