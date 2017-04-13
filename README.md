@@ -11,7 +11,7 @@ Multiple genomes alignment
 * Download UCSC pairwise alignment<br>
 ```hg19.canFam3.all.chain.gz;hg19.equCab2.all.chain.gz;hg19.mm10.all.chain.gz;hg19.susScr2.all.chain.gz;hg19.turTru1.all.chain.gz```<br>
 * MultiZ <br>
-```multiz human.chimp.galago.maf human.mouse.rat.maf 1```<br>
+```nohup multiz human.chimp.galago.maf human.mouse.rat.maf 1 > hg_chimp_mouse.maf```<br>
   ### program description
 multiz.v11.2:  -- aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats<br>
 args: [R=?] [M=?] file1 file2 v? [out1 out2] [nohead] [all]<br>
