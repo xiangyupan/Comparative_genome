@@ -12,7 +12,8 @@ Multiple genomes alignment
 ```hg19.canFam3.all.chain.gz;hg19.equCab2.all.chain.gz;hg19.mm10.all.chain.gz;hg19.susScr2.all.chain.gz;hg19.turTru1.all.chain.gz```<br>
 ```hg19.canFam3.net.gz;hg19.equCab2.net.gz;hg19.mm10.net.gz;hg19.susScr2.net.gz;hg19.turTru1.net.gz```<br>
 ```canFam3.chrom.sizes;equCab2.chrom.sizes;hg19.chrom.sizes;mm10.chrom.sizes;susScr2.chrom.sizes;turTru1.chrom.sizes```<br>
-```download net.axt.gz``` eg,chrUn_gl000231.hg19.turTru1.net.axt.gz<br>
+```wget -c ftp://hgdownload.soe.ucsc.edu/goldenPath/hg19/vsSusScr2/axtNet/* ``` <br>
+	eg: chrUn_gl000231.hg19.turTru1.net.axt.gz<br>
 * axttoMaf <br>
 ```for i in `cat list`;do;~/software/axtToMaf.txt $i ../hg19.chrom.sizes ../turTru1.chrom.sizes hg19_turTru1_$i.maf;done```<br>
 * MultiZ <br>
