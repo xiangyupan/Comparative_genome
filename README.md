@@ -10,6 +10,11 @@ Multiple genomes alignment
 ```for i in {02..29};do mjsub -e lastz.e -o lastz.o -n 2 -M 104857600 -J lastz${i} lastz_32 ../cattle_v5.0.fa.hard.mask.fa[multiple] chr${i}.fa  --gfextend --chain --gapped --identity=90 --rdotplot=cattle_goat_chr${i}.rdotplot --format=maf- --output=cattle_goat_chr${i}.maf;done```<br>
 * Download UCSC pairwise alignment<br>
 ```hg19.canFam3.all.chain.gz;hg19.equCab2.all.chain.gz;hg19.mm10.all.chain.gz;hg19.susScr2.all.chain.gz;hg19.turTru1.all.chain.gz```<br>
+```hg19.canFam3.net.gz;hg19.equCab2.net.gz;hg19.mm10.net.gz;hg19.susScr2.net.gz;hg19.turTru1.net.gz```<br>
+```canFam3.chrom.sizes;equCab2.chrom.sizes;hg19.chrom.sizes;mm10.chrom.sizes;susScr2.chrom.sizes;turTru1.chrom.sizes```<br>
+```download net.axt.gz``` eg,chrUn_gl000231.hg19.turTru1.net.axt.gz<br>
+* axttoMaf <br>
+```for i in `cat list`;do;~/software/axtToMaf.txt $i ../hg19.chrom.sizes ../turTru1.chrom.sizes hg19_turTru1_$i.maf;done```<br>
 * MultiZ <br>
 ```nohup multiz human.chimp.galago.maf human.mouse.rat.maf 1 > hg_chimp_mouse.maf```<br>
   ### program description
