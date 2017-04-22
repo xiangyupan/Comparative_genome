@@ -10,7 +10,7 @@ Multiple genomes alignment
 ```faSize cattle_v5.0.fa.hard.mask.fa -detailed >cattle.sizes```<br>
 * 将基因组按照名字切开，例如牛，对应生成chr1,chr2………scaffold每个fasta<br>
 ```faSplit byName cattle_v5.0.fa.hard.mask.fa ./```<br>
-* 将每个基因组的所有序列对应生成.nib文件,目录分别命名为target/ query/
+* 将每个基因组的所有序列对应生成.nib文件,目录分别命名为target/ query/<br>
 ```for i in *.fa;do faToNib $i `echo $i | sed -e s/.fa/.nib/`; done```<br>
 * Pairwise alignment Lastz<br>
 ```for i in ./target/*.nib;do for j in ./query/*.nib;do jsub -e lastz.e -o lastz.o -n 1 -J LASTZ lastz $i $j H=2000 Y=3400 L=6000 K=2200 >`basename $i .nib`-`basename $j .nib`.lav;done;done```<br>
