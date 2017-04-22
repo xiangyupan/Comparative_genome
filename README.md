@@ -2,9 +2,9 @@ Multiple genomes alignment
 ===========================
 ## Comparative_genome_pipeline
 
-* Repeatmasker<br>
+* 自己组装的基因组做注释也是做过Repeatmaske的，所以这步可以省略<br>
 ```RepeatMasker -engine wublast -species sheep -s -no_is -cutoff 255 -frag 20000 ../reference/sheep.v4.chr.fa```<br>
-** 下载的基因组是soft mask的，可以通过程序将小写字母mask成N<br>
+* NCBI下载的基因组是soft mask的，可以通过程序将小写字母mask成N<br>
 ```python3.5 lower2N.py -s species.fa -o species.hard.mask.fa```<br>
 * 先对要进行比对的每个基因组生成sizes文件<br>
 ```faSize cattle_v5.0.fa.hard.mask.fa -detailed >cattle.sizes```<br>
