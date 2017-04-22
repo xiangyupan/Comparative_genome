@@ -9,7 +9,7 @@ Multiple genomes alignment
 * 先对要进行比对的每个基因组生成sizes文件<br>
 ```faSize cattle_v5.0.fa.hard.mask.fa -detailed >cattle.sizes```<br>
 * 将基因组按照名字切开，例如牛，对应生成chr1,chr2………scaffold每个fasta<br>
-* faSplit byName cattle_v5.0.fa.hard.mask.fa ./<br>
+```faSplit byName cattle_v5.0.fa.hard.mask.fa ./```<br>
 * 将每个基因组的所有序列对应生成.nib文件,目录分别命名为target/ query/
 ```for i in *.fa;do faToNib $i `echo $i | sed -e s/.fa/.nib/`; done```<br>
 * Pairwise alignment Lastz<br>
