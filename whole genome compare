@@ -1,3 +1,0 @@
-## 先对要进行比对的基因组生成sizes文件<br>
-```faSize cattle_v5.0.fa.hard.mask.fa -detailed >cattle.sizes```<br>
-```nohup lastz_32 ../../cattle_v5.0.fa.hard.mask.fa[multiple] Ocapi0987.fa --gfextend --chain --gapped H=2000 K=3000 L=2200 --output=cattle_ocapi_0987.lav >log1 &```<br>
