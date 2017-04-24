@@ -29,7 +29,7 @@ Multiple genomes alignment
 ```chainMergeSort chain/*.chain >all.chain```<br>
 ```chainPreNet all.chain target.sizes query.sizes all.pre.chain```<br>
 * Netting<br>
-```chainNet all.pre.chain =minSpace=1 target.sizes query.sizes stdout /dev/null | netSyntenic stdin targetspecies_queryspecies.net```<br>
+```chainNet all.pre.chain -minSpace=1 target.sizes query.sizes stdout /dev/null | netSyntenic stdin targetspecies_queryspecies.net```<br>
 * Maffing <br>
 ```netToAxt targetspecies_queryspecies.net all.pre.chain target/ query/ stdout | axtSort stdin targetspecies_queryspecies.axt```<br>
 ```axtToMaf targetspecies_queryspecies.net target.sizes query.sizes targetspecies_queryspecies.maf -tPrefix=targetspecies. -qPrefix=queryspecies.```<br>
