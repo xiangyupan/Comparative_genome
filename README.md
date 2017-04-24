@@ -1,7 +1,5 @@
-* Multiple genomes alignment
-===========================
 ## Comparative_genome_pipeline
-
+=================================
 * 自己组装的基因组做注释也是做过Repeatmaske的，所以这步可以省略<br>
 ```RepeatMasker -engine wublast -species sheep -s -no_is -cutoff 255 -frag 20000 ../reference/sheep.v4.chr.fa```<br>
 * NCBI下载的基因组是soft mask的，可以通过程序将小写字母mask成N<br>
