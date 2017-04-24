@@ -13,7 +13,7 @@ Multiple genomes alignment
 * 将每个基因组的所有序列对应生成.nib文件,目录分别命名为target/ query/<br>
 ```for i in *.fa;do faToNib $i `echo $i | sed -e s/.fa/.nib/`; done```<br>
 * Pairwise alignment Lastz<br>
-```for i in ./target/*.nib;do for j in ./query/*.nib;do jsub -e lastz.e -o lastz.o -n 1 -J LASTZ lastz $i $j H=2000 Y=3400 L=6000 K=2200 >`basename $i .nib`-`basename $j .nib`.lav;done;done```<br>
+```for i in ./target/*.nib;do for j in ./query/*.nib;do lastz $i $j H=2000 Y=3400 L=6000 K=2200 >`basename $i .nib`-`basename $j .nib`.lav;done;done```<br>
 * Download outgroup from UCSC pairwise alignment<br>
 ```hg19.canFam3.all.chain.gz;hg19.equCab2.all.chain.gz;hg19.mm10.all.chain.gz;hg19.susScr2.all.chain.gz;hg19.turTru1.all.chain.gz```<br>
 ```hg19.canFam3.net.gz;hg19.equCab2.net.gz;hg19.mm10.net.gz;hg19.susScr2.net.gz;hg19.turTru1.net.gz```<br>
@@ -32,7 +32,7 @@ Multiple genomes alignment
 ```chainNet all.pre.chain -minSpace=1 target.sizes query.sizes stdout /dev/null | netSyntenic stdin targetspecies_queryspecies.net```<br>
 * Maffing <br>
 ```netToAxt targetspecies_queryspecies.net all.pre.chain target/ query/ stdout | axtSort stdin targetspecies_queryspecies.axt```<br>
-```axtToMaf targetspecies_queryspecies.net target.sizes query.sizes targetspecies_queryspecies.maf -tPrefix=targetspecies. -qPrefix=queryspecies.```<br>
+```axtToMaf targetspecies_queryspecies.axt target.sizes query.sizes targetspecies_queryspecies.maf -tPrefix=targetspecies. -qPrefix=queryspecies.```<br>
 ```mafSplit -byTarget dummy.bed maf/ targetspecies_queryspecies.maf```<br>
 * MultiZ <br>
 ```nohup multiz human.chimp.galago.maf human.mouse.rat.maf 1 > hg_chimp_mouse.maf```<br>
