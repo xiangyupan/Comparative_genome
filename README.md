@@ -1,9 +1,13 @@
-## Comparative_genome_pipeline
+<br>## Comparative_genome_pipeline
 =================================
 * 自己组装的基因组做注释也是做过Repeatmaske的，所以这步可以省略<br>
 ```RepeatMasker -engine wublast -species sheep -s -no_is -cutoff 255 -frag 20000 ../reference/sheep.v4.chr.fa```<br>
 * NCBI下载的基因组是soft mask的，可以通过程序将小写字母mask成N<br>
 ```python3.5 lower2N.py -s species.fa -o species.hard.mask.fa```<br>
+* 基因组先过滤掉scaffold长度小于500的<br>
+```faFilter -minSize=500 Oryx_gazella.v1.hard.mask.fa Oryx_gazella.v1.hard.mask.500.fa```<br>
+* 再将N的比例大于90的序列过滤<br>
+```faFilterN Oryx_gazella.v1.hard.mask.500.fa Oryx_gazella.v1.hard.mask.500.removeN.fa 90```<br>
 * 先对要进行比对的每个基因组生成sizes文件<br>
 ```faSize cattle_v5.0.fa.hard.mask.fa -detailed >cattle.sizes```<br>
 * 将基因组按照名字切开，例如牛，对应生成chr1,chr2………scaffold每个fasta<br>
