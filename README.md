@@ -1,4 +1,4 @@
-<br>0000z*Multiple genomes alignment
+* Multiple genomes alignment
 ===========================
 ## Comparative_genome_pipeline
 
@@ -14,7 +14,7 @@
 ```for i in *.fa;do faToNib $i `echo $i | sed -e s/.fa/.nib/`; done```<br>
 * Pairwise alignment Lastz<br>
 * 批量提交需注意，当target 3万对query 3万，会产生不止30000x30000个文件；所以可以写shell提交并删除比对不上的，使目录下没有过多文件。<br>
-```
+```Shell
 #!/bin/sh
 for i in ../goat3/goat3Nib/*.nib;do mkdir `basename $i .nib`; done
 for i in ../goat3/goat3Nib/*.nib
@@ -29,7 +29,7 @@ rm $OutNam
 fi
 done
 done
-```<br>
+```
 ```for i in ./target/*.nib;do for j in ./query/*.nib;do lastz $i $j H=2000 Y=3400 L=6000 K=2200 >`basename $i .nib`-`basename $j .nib`.lav;done;done```<br>
 * Download outgroup from UCSC pairwise alignment<br>
 ```hg19.canFam3.all.chain.gz;hg19.equCab2.all.chain.gz;hg19.mm10.all.chain.gz;hg19.susScr2.all.chain.gz;hg19.turTru1.all.chain.gz```<br>
