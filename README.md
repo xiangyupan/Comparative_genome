@@ -14,7 +14,7 @@
 ```for i in *.fa;do faToNib $i `echo $i | sed -e s/.fa/.nib/`; done```<br>
 * Pairwise alignment Lastz<br>
 * 批量提交需注意，当target 3万对query 3万，会产生不止30000x30000个文件；所以可以写shell提交并删除比对不上的，使目录下没有过多文件。<br>
-```<br>
+```
 #!/bin/sh
 for i in ../goat3/goat3Nib/*.nib;do mkdir `basename $i .nib`; done
 for i in ../goat3/goat3Nib/*.nib
