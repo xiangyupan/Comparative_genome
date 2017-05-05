@@ -58,4 +58,4 @@ done
 * PhyloFit<br>
 ```phyloFit -i MAF maf/the_longest_chromsome.maf```<br>
 * PhastCons <br>
-```for i in maf/*.maf;do x=`basename $i .maf`; phastCons --target-coverage 0.25 --expected-length 12 --rho 0.4 --msa-format MAF phyloFit.mod --most-conserved mostCons/$x.bed > wig/$x.wig;done```<br>
+```for i in maf/*.maf;do x=`basename $i .maf`; phastCons $i --target-coverage 0.25 --expected-length 12 --rho 0.4 --msa-format MAF phyloFit.mod --most-conserved mostCons/$x.bed > wig/$x.wig;done```<br>
