@@ -56,6 +56,8 @@ done
 * MultiZ <br>
 ```nohup multiz human.chimp.galago.maf human.mouse.rat.maf 1 > hg_chimp_mouse.maf```<br>
 * PhyloFit<br>
-```phyloFit -i MAF maf/the_longest_chromsome.maf```<br>
+```phyloFit -i MAF maf/the_longest_chromsome.maf ruminant.tree```<br>
 * PhastCons <br>
 ```for i in maf/*.maf;do x=`basename $i .maf`; phastCons $i --target-coverage 0.25 --expected-length 12 --rho 0.4 --msa-format MAF phyloFit.mod --most-conserved mostCons/$x.bed > wig/$x.wig;done```<br>
+# 小服务器<br>
+```/home/JiangLab/bin/phast-1.4/bin/phastCons --target-coverage 0.25 --expected-length 20 Ruminant.pronghorn.maf --most-conserved mostcons.bed phyloFit.mod >conser.wig```<br>
