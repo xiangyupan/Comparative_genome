@@ -54,7 +54,8 @@ done
 ```axtToMaf targetspecies_queryspecies.axt target.sizes query.sizes targetspecies_queryspecies.maf -tPrefix=targetspecies. -qPrefix=queryspecies.```<br>
 ```mafSplit -byTarget dummy.bed maf/ targetspecies_queryspecies.maf```<br>
 * MultiZ <br>
-```nohup multiz human.chimp.galago.maf human.mouse.rat.maf 1 > hg_chimp_mouse.maf```<br>
+```nohup multiz human.chimp.galago.maf human.mouse.rat.maf 1 out1 out2 > hg_chimp_mouse.maf```<br>
+```mafAddIRows hg_chimp_mouse.maf human.2bit hg_chimp_mouse.addI.maf
 * PhyloFit<br>
 ```phyloFit -i MAF maf/the_longest_chromsome.maf ruminant.tree```<br>
 * PhastCons <br>
