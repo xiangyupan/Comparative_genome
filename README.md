@@ -1,7 +1,8 @@
-<br>## Comparative_genome_pipeline
+## Comparative_genome_pipeline
 =================================
+* all tools are download from http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/ </br>
 * 自己组装的基因组做注释也是做过Repeatmaske的，所以这步可以省略<br>
-```RepeatMasker -engine wublast -species sheep -s -no_is -cutoff 255 -frag 20000 ../reference/sheep.v4.chr.fa```<br>
+```RepeatMasker -engine wublast -species sheep -s -no_is -cutoff 255 -frag 20000 ../reference/sheep.v4.chr.fa```</br>
 * NCBI下载的基因组是soft mask的，可以通过程序将小写字母mask成N<br>
 ```python3.5 lower2N.py -s species.fa -o species.hard.mask.fa```<br>
 * 基因组先过滤掉scaffold长度小于500的<br>
@@ -60,5 +61,5 @@ done
 ```phyloFit -i MAF maf/the_longest_chromsome.maf ruminant.tree```<br>
 * PhastCons <br>
 ```for i in maf/*.maf;do x=`basename $i .maf`; phastCons $i --target-coverage 0.25 --expected-length 12 --rho 0.4 --msa-format MAF phyloFit.mod --most-conserved mostCons/$x.bed > wig/$x.wig;done```<br>
-# 小服务器<br>
-```/home/JiangLab/bin/phast-1.4/bin/phastCons --target-coverage 0.25 --expected-length 20 Ruminant.pronghorn.maf --most-conserved mostcons.bed phyloFit.mod >conser.wig```<br>
+* 小服务器</br>
+```/home/JiangLab/bin/phast-1.4/bin/phastCons --target-coverage 0.25 --expected-length 20 Ruminant.pronghorn.maf --most-conserved mostcons.bed phyloFit.mod >conser.wig```</br>
