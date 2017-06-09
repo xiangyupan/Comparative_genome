@@ -49,6 +49,5 @@ def main():
     else:
 #        print(133)
         nameList = load_sample_list(sys.argv[1])
-        print(nameList)
         produce(nameList)
 main()
